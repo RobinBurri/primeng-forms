@@ -1,0 +1,40 @@
+.navbar {
+  min-width: 100vw;
+  min-height: 4rem;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: green;
+}
+
+.inside-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .logo-container {
+    flex-basis: 1;
+    .logo {
+      font-size: 2em;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+
+  .links-container {
+    width: 100%;
+    flex-basis: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a {
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: 500;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
