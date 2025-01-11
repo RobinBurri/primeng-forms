@@ -1,5 +1,94 @@
-<h2>Form no 1</h2>
+<p-card styleClass="user-form" class="flex justify-content-center">
+  <h3 class="title">Form One</h3>
+  <form [formGroup]="userForm" (ngSubmit)="addUser()" novalidate>
+    <div class="field">
+      <p-iftalabel>
+        <p-iconfield>
+          <input
+            pInputText
+            id="firstName"
+            formControlName="firstName"
+            autocomplete="off"
+          />
+        </p-iconfield>
+        <label for="firstName">First Name</label>
+        @if (
+          userForm.get("firstName")?.invalid && userForm.get("firstName")?.dirty
+        ) {
+          <small class="p-error block"> First name is required</small>
+        }
+      </p-iftalabel>
+    </div>
+    <div class="field">
+      <p-iftalabel>
+        <p-iconfield>
+          <input
+            pInputText
+            id="lastName"
+            formControlName="lastName"
+            autocomplete="off"
+          />
+        </p-iconfield>
+        <label for="username">Last Name</label>
+        @if (
+          userForm.get("lastName")?.invalid && userForm.get("lastName")?.dirty
+        ) {
+          <small class="p-error block"> Last Name is required</small>
+        }
+      </p-iftalabel>
+    </div>
 
-<div class="card flex justify-center">
-  <p-button label="Check" />
-</div>
+    <div formGroupName="address">
+      <h4 class="subtitle">Address</h4>
+      <div class="field">
+        <p-iftalabel>
+          <p-iconfield>
+            <input
+              pInputText
+              id="street"
+              formControlName="street"
+              autocomplete="off"
+            />
+          </p-iconfield>
+          <label for="street">Street</label>
+          @if (
+            userForm.get("address")?.get("street")?.invalid &&
+            userForm.get("address")?.get("street")?.dirty
+          ) {
+            <small class="p-error block"> Street is required</small>
+          }
+        </p-iftalabel>
+      </div>
+
+      <div class="field">
+        <div class="field">
+          <p-iftalabel>
+            <p-iconfield>
+              <input
+                pInputText
+                id="postCode"
+                formControlName="postCode"
+                autocomplete="off"
+              />
+            </p-iconfield>
+            <label for="postCode">PostCode</label>
+            @if (
+              userForm.get("address")?.get("postCode")?.invalid &&
+              userForm.get("address")?.get("postCode")?.dirty
+            ) {
+              <small class="p-error block"> PostCode is required</small>
+            }
+          </p-iftalabel>
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn"
+      size="small"
+      pButton
+      type="submit"
+      label="Submit"
+      [disabled]="userForm.invalid"
+    ></button>
+  </form>
+</p-card>

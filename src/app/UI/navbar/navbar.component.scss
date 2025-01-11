@@ -3,7 +3,7 @@
   min-height: 4rem;
   padding: 10px;
   margin-bottom: 20px;
-  background-color: green;
+  background-color: var(--p-primary-color);
 }
 
 .inside-wrapper {
@@ -15,7 +15,6 @@
     .logo {
       font-size: 2em;
       font-weight: 700;
-      color: white;
       cursor: pointer;
       text-align: center;
     }
@@ -33,7 +32,6 @@
       text-decoration: none;
       font-size: 1.2em;
       font-weight: 500;
-      color: white;
       cursor: pointer;
     }
   }
