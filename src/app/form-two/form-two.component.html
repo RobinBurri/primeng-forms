@@ -1,1 +1,26 @@
-<p>form-two works!</p>
+<p-card class="card-container">
+  <p-floatlabel variant="on" class="input-group">
+    <input pInputText formControlName="firstName" />
+    <label>First Name</label>
+  </p-floatlabel>
+  <p-floatlabel variant="on" class="input-group">
+    <input pInputText formControlName="lastName" />
+    <label>Last Name</label>
+  </p-floatlabel>
+
+  <div class="input-group">
+    <p-datepicker formControlName="date" placeholder="Date of birth" />
+  </div>
+
+  <p-inputgroup class="input-group">
+    <p-inputgroup-addon>
+      <i class="pi pi-map"></i>
+    </p-inputgroup-addon>
+    <p-select
+      formControlName="selectedCity"
+      [options]="countries"
+      optionLabel="name"
+      placeholder="Country"
+    />
+  </p-inputgroup>
+</p-card>
