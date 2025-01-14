@@ -3,7 +3,7 @@ import { Router, RouterModule } from '@angular/router';
 import { usePreset } from '@primeng/themes';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
-import { MyPreset2 } from '../../../../mypreset';
+import { theme1, theme2, theme3, theme4 } from '../../../../mypreset';
 import { SelectModule } from 'primeng/select';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
@@ -34,16 +34,43 @@ export class NavbarComponent {
     { label: 'Form Two', link: '/form-two' },
   ];
 
+  themes = [
+    { label: 'Theme 1', name: 'theme1' },
+    { label: 'Theme 2', name: 'theme2' },
+    { label: 'Theme 3', name: 'theme3' },
+    { label: 'Theme 4', name: 'theme4' },
+  ];
+
   formPicker = this.fb.group({
-    formSelected: [''],
+    formSelected: [{ label: '', link: '' }],
+    themeSelected: [{ label: '', name:'' }],
   });
 
-  toggleTheme() {
-    usePreset(MyPreset2);
-  }
 
-  SelectHandler() {
+
+  SelectFormHandler() {
     this.router.navigate([this.formPicker.value.formSelected?.link]);
     this.formPicker.reset();
+  }
+
+  SelectThemeHandler() {
+    const themeName = this.formPicker.value.themeSelected?.name;
+    switch (themeName) {
+      case 'theme1':
+        usePreset(theme1);
+        break;
+      case 'theme2':
+        usePreset(theme2);
+        break;
+      case 'theme3':
+        usePreset(theme3);
+        break;
+      case 'theme4':
+        usePreset(theme4);
+        break;
+      default:
+        usePreset(theme1);
+        break;
+    }
   }
 }

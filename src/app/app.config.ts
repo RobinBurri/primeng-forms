@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
-import { MyPreset1 } from '../../mypreset';
+import {  theme1 } from '../../mypreset';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
-        preset: MyPreset1,
+        preset: theme1,
         options: { darkModeSelector: '.dark-mode', ripple: true },
       },
     }),

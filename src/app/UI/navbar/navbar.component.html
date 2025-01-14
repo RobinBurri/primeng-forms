@@ -9,22 +9,33 @@
         routerLink="/"
       />
     </div>
-    <div class="container">
-      <form [formGroup]="formPicker">
+    <form [formGroup]="formPicker">
+      <div class="container">
         <p-select
+          class="select"
           formControlName="formSelected"
           [options]="forms"
           optionLabel="label"
           placeholder="Select a Form"
-          (onChange)="SelectHandler()"
+          (onChange)="SelectFormHandler()"
         />
-      </form>
-    </div>
-    <div class="card flex justify-center">
-      <p-button label="Toggle Dark Mode" (onClick)="toggleDarkMode()" />
-    </div>
-    <div class="card flex justify-center">
-      <p-button label="Toggle Theme" (onClick)="toggleTheme()" />
+        <p-select
+        class="select"
+          formControlName="themeSelected"
+          [options]="themes"
+          optionLabel="label"
+          placeholder="Select a Theme"
+          (onChange)="SelectThemeHandler()"
+        />
+      </div>
+    </form>
+
+    <div>
+      <p-button
+        label="Dark Mode"
+        severity="secondary"
+        (onClick)="toggleDarkMode()"
+      />
     </div>
   </div>
 </div>

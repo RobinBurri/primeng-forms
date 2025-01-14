@@ -1,7 +1,7 @@
 import { definePreset } from '@primeng/themes';
 import Aura from '@primeng/themes/aura';
 
-export const MyPreset1 = definePreset(Aura, {
+export const theme1 = definePreset(Aura, {
   semantic: {
     primary: {
       50: '{teal.50}',
@@ -37,7 +37,7 @@ export const MyPreset1 = definePreset(Aura, {
   },
 });
 
-export const MyPreset2 = definePreset(Aura, {
+export const theme2 = definePreset(Aura, {
   semantic: {
     primary: {
       50: '{stone.50}',
@@ -51,6 +51,78 @@ export const MyPreset2 = definePreset(Aura, {
       800: '{stone.800}',
       900: '{stone.900}',
       950: '{stone.950}',
+    },
+    focusRing: {
+      width: '2px',
+      style: 'dashed',
+      color: '{primary.color}',
+      offset: '1px',
+    },
+    colorScheme: {
+      light: {
+        formField: {
+          hoverBorderColor: '{primary.color}',
+        },
+      },
+      dark: {
+        formField: {
+          hoverBorderColor: '{primary.color}',
+        },
+      },
+    },
+  },
+});
+
+export const theme3 = definePreset(Aura, {
+  semantic: {
+    primary: {
+      50: '{rose.50}',
+      100: '{rose.100}',
+      200: '{rose.200}',
+      300: '{rose.300}',
+      400: '{rose.400}',
+      500: '{rose.500}',
+      600: '{rose.600}',
+      700: '{rose.700}',
+      800: '{rose.800}',
+      900: '{rose.900}',
+      950: '{rose.950}',
+    },
+    focusRing: {
+      width: '2px',
+      style: 'dashed',
+      color: '{primary.color}',
+      offset: '1px',
+    },
+    colorScheme: {
+      light: {
+        formField: {
+          hoverBorderColor: '{primary.color}',
+        },
+      },
+      dark: {
+        formField: {
+          hoverBorderColor: '{primary.color}',
+        },
+      },
+    },
+  },
+});
+
+export const theme4 = definePreset(Aura, {
+  semantic: {
+    primary: {
+      50: '{gray.50}',
+      100: '{gray.100}',
+      200: '{gray.200}',
+      300: '{gray.300}',
+      400: '{gray.400}',
+      500: '{gray.500}',
+      600: '{gray.600}',
+      700: '{gray.700}',
+      800: '{gray.800}',
+      900: '{gray.900}',
+      950: '{gray.950}',
     },
     focusRing: {
       width: '2px',
