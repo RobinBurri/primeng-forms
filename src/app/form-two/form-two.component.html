@@ -1,20 +1,21 @@
 <p-card class="card-container">
+  <h3 class="title">Form Two</h3>
   <form pFocusTrap [formGroup]="userForm" class="container">
-    <p-floatlabel variant="on" class="input-group">
+    <p-floatlabel variant="on" class="field">
       <input pInputText formControlName="firstName" [pAutoFocus]="true" />
       <label>First Name</label>
     </p-floatlabel>
 
-    <p-floatlabel variant="on" class="input-group">
+    <p-floatlabel variant="on" class="field">
       <input pInputText formControlName="lastName" />
       <label>Last Name</label>
     </p-floatlabel>
 
-    <div class="input-group">
+    <div class="field">
       <p-datepicker formControlName="dateOfBirth" placeholder="Date of birth" />
     </div>
 
-    <p-inputgroup class="input-group">
+    <p-inputgroup class="field">
       <p-inputgroup-addon>
         <i class="pi pi-map"></i>
       </p-inputgroup-addon>
@@ -26,7 +27,7 @@
       />
     </p-inputgroup>
 
-    <div class="input-group center">
+    <div class="field center">
       <p-selectbutton
         [options]="genderOption"
         formControlName="gender"

@@ -9,6 +9,7 @@
 .inside-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   .mytheme {
     background-color: var(--p-primary-color);
@@ -28,16 +29,5 @@
   .links-container {
     width: 100%;
     flex-basis: 1;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    a {
-      margin-left: 20px;
-      text-decoration: none;
-      font-size: 1.2em;
-      font-weight: 500;
-      cursor: pointer;
-    }
   }
 }

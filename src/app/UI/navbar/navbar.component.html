@@ -9,9 +9,16 @@
         routerLink="/"
       />
     </div>
-    <div class="links-container">
-      <a routerLink="/form-one" routerLinkActive="active">Form 1</a>
-      <a routerLink="/form-two" routerLinkActive="active">Form 2</a>
+    <div class="container">
+      <form [formGroup]="formPicker">
+        <p-select
+          formControlName="formSelected"
+          [options]="forms"
+          optionLabel="label"
+          placeholder="Select a Form"
+          (onChange)="SelectHandler()"
+        />
+      </form>
     </div>
     <div class="card flex justify-center">
       <p-button label="Toggle Dark Mode" (onClick)="toggleDarkMode()" />
