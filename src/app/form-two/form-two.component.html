@@ -1,26 +1,45 @@
 <p-card class="card-container">
-  <p-floatlabel variant="on" class="input-group">
-    <input pInputText formControlName="firstName" />
-    <label>First Name</label>
-  </p-floatlabel>
-  <p-floatlabel variant="on" class="input-group">
-    <input pInputText formControlName="lastName" />
-    <label>Last Name</label>
-  </p-floatlabel>
+  <form pFocusTrap [formGroup]="userForm" class="container">
+    <p-floatlabel variant="on" class="input-group">
+      <input pInputText formControlName="firstName" [pAutoFocus]="true" />
+      <label>First Name</label>
+    </p-floatlabel>
 
-  <div class="input-group">
-    <p-datepicker formControlName="date" placeholder="Date of birth" />
-  </div>
+    <p-floatlabel variant="on" class="input-group">
+      <input pInputText formControlName="lastName" />
+      <label>Last Name</label>
+    </p-floatlabel>
 
-  <p-inputgroup class="input-group">
-    <p-inputgroup-addon>
-      <i class="pi pi-map"></i>
-    </p-inputgroup-addon>
-    <p-select
-      formControlName="selectedCity"
-      [options]="countries"
-      optionLabel="name"
-      placeholder="Country"
-    />
-  </p-inputgroup>
+    <div class="input-group">
+      <p-datepicker formControlName="dateOfBirth" placeholder="Date of birth" />
+    </div>
+
+    <p-inputgroup class="input-group">
+      <p-inputgroup-addon>
+        <i class="pi pi-map"></i>
+      </p-inputgroup-addon>
+      <p-select
+        formControlName="country"
+        [options]="countries"
+        optionLabel="name"
+        placeholder="Select a Country"
+      />
+    </p-inputgroup>
+
+    <div class="input-group center">
+      <p-selectbutton
+        [options]="genderOption"
+        formControlName="gender"
+        optionLabel="label"
+        optionValue="value"
+      />
+    </div>
+    <p-button
+      type="submit"
+      label="Submit"
+      class="center"
+      [disabled]="userForm.invalid"
+      (onClick)="onSubmit()"
+    ></p-button>
+  </form>
 </p-card>

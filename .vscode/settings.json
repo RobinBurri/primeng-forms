@@ -5,6 +5,7 @@
         "iftalabel",
         "inputgroup",
         "inputicon",
-        "inputnumber"
+        "inputnumber",
+        "selectbutton"
     ]
 }
