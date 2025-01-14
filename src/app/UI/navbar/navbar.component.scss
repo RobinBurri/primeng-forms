@@ -10,6 +10,11 @@
   display: flex;
   justify-content: space-between;
 
+  .mytheme {
+    background-color: var(--p-primary-color);
+    cursor: pointer;
+  }
+
   .logo-container {
     flex-basis: 1;
     .logo {
